@@ -34,8 +34,8 @@
 
 #thumbnail {
     width: 100%; /* 원하는 너비로 조정 */
-    height: 300px; /* 원하는 높이로 조정 */
-    margin-top: 10px;
+    height: auto;
+    min-height: 50%;/* 원하는 높이로 조정 */
     background-color: #f0f0f0; /* 기본 배경 색상 */
     color: #888; /* 텍스트 색상 */
     text-align: center;
@@ -50,7 +50,6 @@
 }
 
 #thumbnail span {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -78,7 +77,6 @@
 
 @media (max-width: 767px) {
   #thumbnail {
-    height: 8%;
    line-height: 8;
     font-size: 15px;
     TEXT-ALIGN: CENTER;
