@@ -50,13 +50,16 @@ document.getElementById('bgmTitle').textContent = title;
                         });
                         player.playVideo();
                         status.textContent = '재생 중'; // 상태 텍스트 업데이트
-                             /*statusImg.src = '여기에 이미지 명(확장자 포함) 이나 루트 넣기'; 로 바꾸면 이미지로 변경*/
                         status.style.color = 'green';
+                             /*statusImg.src = '여기에 이미지 명(확장자 포함) 이나 루트 넣기'; 로 바꾸면 이미지로 변경
+                             status.style.color는 삭제*/                             
+                        playPauseBtn.textContent = '■'; // 버튼 텍스트를 '멈춤'으로 변경
                         isPlaying = true;
                     } else {
                         player.pauseVideo();
                         status.textContent = '일시정지'; // 상태 텍스트 업데이트
                         status.style.color = 'red';
+                        playPauseBtn.textContent = '▶'; 
                         isPlaying = false;
                     }
                     break;
