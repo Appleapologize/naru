@@ -50,6 +50,7 @@ document.getElementById('bgmTitle').textContent = title;
                         });
                         player.playVideo();
                         status.textContent = '재생 중'; // 상태 텍스트 업데이트
+                             /*statusImg.src = '여기에 이미지 명(확장자 포함) 이나 루트 넣기'; 로 바꾸면 이미지로 변경*/
                         status.style.color = 'green';
                         isPlaying = true;
                     } else {
