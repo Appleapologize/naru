@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>나루</title>
+    <script src="https://kit.fontawesome.com/8f3efd2dcb.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="./skin/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/css/music-player.css">
+    <link rel="stylesheet" href="./style/css/style.css">
+    <script src="./style/js/music.js"></script>
+    <script>
+    function popup(){
+      window.open("notice.html", "?????공지사항??", "width=400, height=400, history=no, resizable=no, status=no, scrollbars=yes, menubar=no");
+    }
+</script>
+  </head>
+  <body onLoad="javascript:popup()">
+   <div class="music-play">
+    <div id="statusContainer">
+        <span id="bgmStatus">멈춤</span>
+        <!--marquee behavior="scroll" loop="infinite" width="80%" style="padding"-->
+      <div class="marquee-con"><span id="bgmTitle" class="marquee">제목 없음</span></div>
+    </div>
+    <div id="controls">
+        <button onclick="bgm('prev')">◀◀</button>
+        <button id="playPauseBtn" onclick="bgm('playPause')">▶</button>
+        <button onclick="bgm('next')">▶▶</button>
+    </div>
+    <div id="player"></div>
+      </div>
+     <div id="contain">
+        <iframe src="./content.html" frameborder="0" style="width: 100%; height: 200%;"></iframe>
+    </div>
+  </body>
+</html>
