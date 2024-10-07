@@ -1,0 +1,18 @@
+    <link rel="stylesheet" href="./music/music-titleisfree/music-titleisfree.css">
+      <div class="music-play">
+        <div id="statusContainer">
+            <span id="bgmStatus">멈춤</span>
+            <div class="marquee-con">
+                <span id="bgmTitle" class="marquee" data-title1="첫 번째 곡 제목" data-title2="두 번째 곡 제목">제목 없음</span>
+            </div>
+                  <div id="thumbnail"></div>
+        </div>
+        <div id="controls">
+            <button onclick="bgm('prev')">⏮</button>
+            <button id="playPauseBtn" onclick="bgm('playPause')">▶</button>
+            <button onclick="bgm('next')">⏭</button>
+        </div>
+        <div id="player"></div>
+      </div>
+
+          <script src="./music/music-titleisfree/music-titleisfree.js"></script>
