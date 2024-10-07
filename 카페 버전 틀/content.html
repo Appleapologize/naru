@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="./style/css/style.css">
+<link rel="stylesheet" href="./style/css/modal.css">
+<link rel="stylesheet" href="./style/css/music-player-.css">
+<script src="./style/js/music-.js"></script>
+<!--<input type="button" class="box" value="검색">
+<input type="button" class="box" value="I'm feeling Lucky">-->
+<div id="fix-header">
+  <h1 class="site-top">사이트 메인 상단</h1><br>
+  <ul>
+  <li><a href="./pages/report.html" target="frame" class="top-button-one">MAIN</a></li>
+  <li><a href="./pages/home.html" target="frame" class="top-button-one">공지사항</a></li>
+  <li><a href="./pages/report.html" target="frame" class="top-button-one">신고란</a></li>
+  </ul>
+</div>
+  <div id="side-menu">
+  카페 정보와 메뉴를 여기다가 두자
+    <div>
+      <div class="image-box">
+        <img src="#"><!--이미지 링크 적으시면 되세요-->
+        <p class="commissionID">ⓒ이미지 출처</p>
+      </div>
+      <table>
+        <tr><!-- 첫번째 줄 시작 -->
+          <td class="bold-name">매니저</td>
+          <td>누구누구</td>
+        </tr><!-- 첫번째 줄 끝 -->
+        <tr><!-- 두번째 줄 시작 -->
+          <td class="bold-name">생성일</td>
+          <td>D-000</td>
+        </tr><!-- 두번째 줄 끝 -->
+        <tr><!-- 세번째 줄 시작 -->
+          <td class="bold-name">회원수</td>
+          <td>000,000</td>
+        </tr><!-- 세번째 줄 끝 -->
+        <tr><!-- 네번째 줄 시작 -->
+          <td class="bold-name">방문자수</td>
+          <td>000,000</td>
+          </tr><!-- 네번째 줄 끝 -->
+      </table>
+    </div><!--카페정보 끝-->
+  <!--회원가입 및 로그인 모달창-->
+ <!--모달창 시작-->
+  <button id="modal-btn">로그인 / 회원가입</button>
+<div id="modal" class="dialog">
+  <div class="tb">
+    <div class="inner" style="max-width:600px;"">
+      <div class="top">
+        <div class="title">    모달창 제목    </div>
+        <a href="#" class="close">닫기</a>
+      </div>
+      <div class="ct">
+      여기에 모달창 내용 적어보세요
+      </div>
+    </div>
+  </div>
+</div>
+    <!--모달창 자바스크립트-->
+    <script>
+const modal = document.querySelector("#modal");
+const btn = document.querySelector("#modal-btn");
+const close = document.querySelector(".close");
+ 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+close.onclick = function() {
+  modal.style.display = "none";
+}
+    </script>
+    <!--모달창 끝-->
+    <!--검색창-->
+<form class="search-box" action="" method="get">
+<input class="search-txt" type="text" name="" placeholder="검색어를 입력하세요.">
+<button class="search-btn" type="submit">검색</button>
+</form>
+  <li class="menu-group">
+      <ul>
+          <li id="group-line"></li>
+          <div class="menu-group-title">
+            <div id="menu-title">전체글보기</div>
+          </div>
+          <ul>
+            <li>최신글 보기</li>
+          </ul>
+      </ul>
+    </li>
+    <li class="menu-group">
+      <ul>
+        <li id="group-line"></li>
+        <div class="menu-group-title">
+          <div id="menu-title">바로가기 링크</div>
+        </div>
+        <ul>
+          <li><a href="#" target="frame">링크1</a></li>
+          <li><a href="#" target="_blank">링크2</a></li>
+        </ul>
+      </ul>
+    </li>
+    <li id="group-line"></li>
+      
+    <!--음악 플레이어-->
+    <div class="music-play">
+    <div id="statusContainer">
+        <span id="bgmStatus">멈춤</span>
+        <marquee scrolldelay="100" scrollamount="3"><span id="bgmTitle" class="marquee">제목 없음</span></marquee>
+        <div id="thumbnail"><span>앨범아트 없음</span></div>
+    </div>
+    <div id="controls">
+        <button onclick="bgm('prev')">⏮</button>
+        <button id="playPauseBtn" onclick="bgm('playPause')">⏯</button>
+        <button onclick="bgm('next')">⏭</button>
+    </div>
+    <div id="player"></div>
+      </div>
+</div>
+<div id="main">
+<iframe src="./pages/home.html" name="frame" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+</div>
