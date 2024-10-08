@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="../style/css/report.css">
+<link rel="stylesheet" href="../style/css/modal.css">
+<form>
+  <div>
+  <span>신고사항</span>
+  <select>
+    <option value="친목 제보">친목 제보</option>
+    <option value="다툼 제보">다툼 제보</option>
+    <option value="잘못된 정보">잘못된 정보</option>
+  </select>
+  </div>
+  <br>
+  <textarea name="report" placeholder="신고할 정보를 자세히 입력해주세요"></textarea>
+   <button id="modal-btn">전송</button>
+<div id="modal" class="dialog" style="text-align:center;">
+  <div class="tb">
+    <div class="inner" style="max-width:600px;"">
+      <div class="top">
+        <div class="title">    네트워크 오류    </div>
+        <a href="#" class="close">닫기</a>
+      </div>
+      <div class="ct">
+      신고사항을 전달할 수 없습니다.
+      </div>
+    </div>
+  </div>
+</div>
+    <!--모달창 자바스크립트-->
+    <script>
+const modal = document.querySelector("#modal");
+const btn = document.querySelector("#modal-btn");
+const close = document.querySelector(".close");
+ 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+close.onclick = function() {
+  modal.style.display = "none";
+}
+    </script>
+    <!--모달창 끝-->
+</form>
