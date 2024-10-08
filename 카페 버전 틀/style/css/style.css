@@ -1,0 +1,263 @@
+@charset "utf-8";
+
+/*@media (max-width: 767px){
+	//모바일
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    // 테블릿 세로
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    // 테블릿 가로
+}
+
+@media (min-width: 1200px) {
+    // 데스크탑 일반
+}*/
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+/* 웹폰트는 이 위치에 넣어서 불러옵니다. */
+
+:root {
+  --top-btn: yellow;
+  --side-menu-height:1350px /*이건 컴퓨터에서 스크롤바 안 생길때 높이 조절용*/
+}
+
+
+
+html,body:has(#contain){height:100%;
+                    box-sizing:border-box;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    min-height:var(--side-menu-height)}
+
+
+body:has(#fix-header){
+    position: fixed;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height:100%; overflow-x: hidden;}
+
+iframe{display: block;}
+
+a {text-decoration:none;
+  color:black;}
+
+div{text-align:center;
+    margin:0 auto;}
+
+#contain{height:120%;
+        margin:0 auto;}
+}
+p.commissionID{font-size:15px;}
+@media (max-width: 767px){p.commissionID{font-size:10px;}}
+/*위의 메뉴*/
+#fix-header ul{display:flex;
+              justify-content: left;
+              margin:20px;
+              max-height:100px;}
+
+#fix-header ul li{border-right:1px solid gray;
+                 padding:0px 10px;}
+
+.top-button{min-width:30px;
+            background:var(--top-btn);
+            padding:10px 20px;
+            margin:5px;
+            text-align:center;
+            display:block;
+           }
+
+
+.top-button-one{min-width:30px;
+            background:var(--top-btn);
+            padding:10px 20px;
+            margin:5px;
+            text-align:center;
+            display:block;
+            /*transform: translate(0, 25%);*/ /*두줄 이상이 생겼을 때 켜기*/
+           }
+
+
+#side-menu {width:250px;
+           border:1px solid black;
+           float: left;
+           padding:10px;
+           margin: 10px;}
+
+@media (max-width: 767px){
+  #fix-header ul{justify-content: left;}
+
+#fix-header ul li{border-right:1px solid gray;}
+	
+  #side-menu{border:1px solid black;
+               width:30%;}
+}
+
+img {object-fit: contain;
+     width:90%;}
+
+@media (max-width: 767px){
+  img {object-fit: contain;
+      }}
+
+div div.image-box{width:100%;
+                 margin:20px 0;}
+
+img { object-fit: contain;
+     border-radius:15px;
+    }
+
+/*카페 정보*/
+table{width: 100%;
+      }
+
+.bold-name{border-right:1px dashed gray;
+          text-align:right;
+          width:50%;
+          padding-right:10px;}
+
+td{padding-left:10px;}
+
+@media (max-width: 767px){
+ .bold-name{font-size:10px;
+          padding:5px;}
+
+td{padding-left: 5px;
+   font-size: 11px;}}
+
+/*메뉴창 그룹 나누는 선*/
+#group-line{list-style:none;
+  padding:0;
+  margin:20 0px 10 0;
+  border-bottom:1px solid gray;}
+
+/*메뉴 기본적인 리스트 스타일*/
+li{list-style:none;
+  padding:0 10px 5px 0;
+  margin:0;
+  text-align: right;}
+ul{list-style:none;
+  padding:0;
+  margin:0;}
+
+li.menu-group{list-style:none;
+               padding:0;
+              margin:0;}
+@media (max-width: 767px){li{padding:0; 
+                             font-size:12px;}}
+
+/*메뉴 그룹 이름*/
+#menu-title{font-size:20px;
+           font-weight:bold;
+           margin: 5px 5px;
+           text-align: start;}
+
+@media (max-width: 767px){#menu-title{font-size:15px;}}
+
+/*검색창*/
+form{display:flex;
+     margin:10 0px 0 10;}
+button.search-btn{margin-left:5px;}
+
+@media (max-width: 767px){form{margin:0; display:none;}button.search-btn{display:none;}}
+
+/*음악 플레이어*/
+.player {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  height:40px;
+}
+
+.thumbnail img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.info {
+  margin-top: 10px; /* 앨범 커버 아래로 약간의 간격 */
+
+}
+
+.controls {
+
+  margin-top: 15px;
+
+}
+
+button {
+
+  padding: 10px;
+
+  margin: 5px;
+
+  background-color: #6200ea;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+button:hover {
+
+  background-color: #3700b3;
+
+}
+
+#progress-bar {
+
+  width: 100%;
+
+  background-color: #ddd;
+
+  height: 8px;
+
+  border-radius: 4px;
+
+  margin-top: 10px;
+
+  position: relative;
+
+}
+
+#progress {
+
+  width: 0;
+
+  height: 100%;
+
+  background-color: #6200ea;
+
+  border-radius: 4px;
+
+}
+
+/*메인*/
+
+#main{text-align: center;
+    align-content: center;
+    display: flex;
+    height: 100%;}
+
+
+
+/*사이트 맨 상단*/
+.site-top{object-fit: contain;}
+
+
+@media (max-width: 767px){
+  #modal{font-size:12px;}
+ #modal-btn{font-size:12px;width: auto;}}
