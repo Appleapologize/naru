@@ -1,0 +1,16 @@
+@charset "utf-8";
+body:has(#real-notice){background:black;}
+
+#real-notice h2{text-align:center;
+               font-size:30px;
+               margin:20px;
+               color:white;}
+
+#real-notice div.real-notice-text {background:#F5F6CE;
+                                  border-radius:10px;
+                                  padding:20px;}
+
+#real-notice div.real-notice-text span{font-size:20px;}
+
+.highlight-a { background: #ff9eef;
+             padding:3px 5px;}
