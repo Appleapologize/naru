@@ -95,7 +95,7 @@ function bgm(action) {
             break;
     }
     updateThumbnail(); // 썸네일 업데이트
-    updateVideoTitle(); // 제목 업데이트 추가
+    updateVideoTitle(); // 제목 업데이트
 }
         // 유튜브 API 스크립트 로드
         var tag = document.createElement('script');
