@@ -44,22 +44,18 @@
             }
         }
 
-        function updateTitle() {
-    const titleElement = document.getElementById('bgmTitle');
-    let title;
+function updateVideoTitle() {
+    const playlist = document.querySelectorAll('#playlist li');  // 플레이리스트 항목을 모두 가져옴
+    if (player && player.getVideoData) {
+        let videoData = player.getVideoData(); // 현재 동영상 데이터 가져오기
+        let apiTitle = videoData.title;  // YouTube API에서 가져온 제목
 
-    // 현재 곡에 맞는 HTML에서 제공된 제목을 가져옵니다.
-    switch(currentVideoIndex) {
-        case 0:
-            title = titleElement.getAttribute('data-title1'); // 첫 번째 곡의 제목
-            break;
-        case 1:
-            title = titleElement.getAttribute('data-title2'); // 두 번째 곡의 제목
-            break;
-        /*default:
-            title = player.getVideoData().title;  제목이 없을시 YouTube에서 가져온 제목 사용시 주석 삭제
-            break;*/
+        // HTML <ul>에서 가져온 제목이 있으면 우선 사용, 없으면 API 제목 사용
+        const currentTitle = playlist[currentVideoIndex]?.getAttribute('data-title') || apiTitle;
+
+        document.getElementById('marqueeText').innerText = currentTitle; // 제목 업데이트
     }
+}
 
     titleElement.textContent = title;
 }
