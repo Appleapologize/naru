@@ -1,1 +1,13 @@
-s
+   <div class="music-play">
+    <div id="statusContainer">
+        <span id="bgmStatus">멈춤</span>
+        <!--marquee behavior="scroll" loop="infinite" width="80%" style="padding"-->
+      <div class="marquee-con"><span id="bgmTitle" class="marquee">제목 없음</span></div>
+    </div>
+    <div id="controls">
+        <button onclick="bgm('prev')">⏮</button>
+        <button id="playPauseBtn" onclick="bgm('playPause')">⏯</button>
+        <button onclick="bgm('next')">⏭</button>
+    </div>
+    <div id="player"></div>
+      </div>
