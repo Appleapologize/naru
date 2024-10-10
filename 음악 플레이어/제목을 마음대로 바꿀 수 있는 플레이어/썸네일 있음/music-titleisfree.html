@@ -3,7 +3,7 @@
         <div id="statusContainer">
             <span id="bgmStatus">멈춤</span>
             <div class="marquee-con">
-                <span id="bgmTitle" class="marquee" data-title1="첫 번째 곡 제목" data-title2="두 번째 곡 제목">제목 없음</span>
+                <span id="bgmTitle" class="marquee">제목 없음</span>
             </div>
                   <div id="thumbnail"></div>
         </div>
@@ -13,6 +13,10 @@
             <button onclick="bgm('next')">⏭</button>
         </div>
         <div id="player"></div>
+              <ul id="playlist" style="display:none">
+                    <li data-title="첫 번째 곡 제목"></li>
+                    <li data-title="두 번째 곡 제목"></li>
+                    <li data-title="세 번째 곡 제목"></li>
+               </ul>
       </div>
-
           <script src="./music/music-titleisfree/music-titleisfree.js"></script>
