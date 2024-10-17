@@ -69,12 +69,26 @@
 }
 #bgmStatus{display:block;}
 
-#bgmTitle {animation: marquee 60s linear infinite;
-   }
+.marquee-con{position: relative;
+            overflow:hidden;
+            width:100%;
+            height:30px;
+            display:flex;
+            align-items:center;}
 
-.marquee{animation: marquee 60s linear infinite;
-       }
-
+.marquee{padding:9px 0;
+         width:100%;
+         white-space:nowrap;
+        position: absolute;
+	text-align: center;
+	transform: translateX(100%); /* 왼쪽으로 이동, 오른쪽 이동 시:translateX의 값을 전부 반대로*/
+	animation: scroll-left 25s linear infinite; /* 키프레임 이름, 시간, 반응 속도, 반복여부 */
+	}
+        
+@keyframes scroll-left {
+	0% {transform: translateX(100%);}
+	100% {transform: translateX(-100%);}
+	}
 @media (max-width: 767px) {
   #thumbnail {
    line-height: 8;
