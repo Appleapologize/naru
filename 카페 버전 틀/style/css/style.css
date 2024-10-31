@@ -24,24 +24,25 @@
 
 :root {
   --top-btn: yellow;
-  --side-menu-height:1350px /*이건 컴퓨터에서 스크롤바 안 생길때 높이 조절용*/
 }
 
 
+::-webkit-scrollbar-thumb {border-radius: 12px;}
 
-html,body:has(#contain){height:100%;
-                    box-sizing:border-box;
+
+html,body{scrollbar-width: thin;
+          scrollbar-color: red black;}
+html,body:has(#contain){box-sizing:border-box;
                     flex-direction: column;
                     justify-content: center;
-                    align-items: center;
-                    min-height:var(--side-menu-height)}
+                    align-items: center;}
 
 
 body:has(#fix-header){
-    position: fixed;
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    width: 100vw;
     height:100%; overflow-x: hidden;}
 
 iframe{display: block;}
@@ -52,8 +53,7 @@ a {text-decoration:none;
 div{text-align:center;
     margin:0 auto;}
 
-#contain{height:120%;
-        margin:0 auto;}
+#contain{margin:0 auto;}
 }
 p.commissionID{font-size:15px;}
 @media (max-width: 767px){p.commissionID{font-size:10px;}}
@@ -84,20 +84,16 @@ p.commissionID{font-size:15px;}
             /*transform: translate(0, 25%);*/ /*두줄 이상이 생겼을 때 켜기*/
            }
 
-
-#side-menu {width:250px;
+#side-menu {width:30%;
            border:1px solid black;
            float: left;
+            display:block;
            padding:10px;
            margin: 10px;}
 
 @media (max-width: 767px){
   #fix-header ul{justify-content: left;}
-
 #fix-header ul li{border-right:1px solid gray;}
-	
-  #side-menu{border:1px solid black;
-               width:30%;}
 }
 
 img {object-fit: contain;
