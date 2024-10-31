@@ -1,43 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../style/css/report.css">
 <link rel="stylesheet" href="../style/css/modal.css">
 <form>
   <div>
-  <span>신고사항</span>
-  <select>
-    <option value="친목 제보">친목 제보</option>
-    <option value="다툼 제보">다툼 제보</option>
-    <option value="잘못된 정보">잘못된 정보</option>
-  </select>
+    <span>신고사항</span>
+    <select>
+      <option value="친목 제보">친목 제보</option>
+      <option value="다툼 제보">다툼 제보</option>
+      <option value="잘못된 정보">잘못된 정보</option>
+    </select>
   </div>
   <br>
   <textarea name="report" placeholder="신고할 정보를 자세히 입력해주세요"></textarea>
-   <button id="modal-btn">전송</button>
-<div id="modal" class="dialog" style="text-align:center;">
-  <div class="tb">
-    <div class="inner" style="max-width:600px;"">
-      <div class="top">
-        <div class="title">    네트워크 오류    </div>
-        <a href="#" class="close">닫기</a>
-      </div>
-      <div class="ct">
-      신고사항을 전달할 수 없습니다.
+  <button id="modal-btn">전송</button>
+  <div id="modal" class="dialog" style="text-align:center;">
+    <div class="tb">
+      <div class="inner" style="max-width:600px;">
+        <div class="top">
+          <div class="title">네트워크 오류</div>
+          <a href="#" class="close">닫기</a>
+        </div>
+        <div class="ct">
+          신고사항을 전달할 수 없습니다.
+        </div>
       </div>
     </div>
   </div>
-</div>
-    <!--모달창 자바스크립트-->
-    <script>
-const modal = document.querySelector("#modal");
-const btn = document.querySelector("#modal-btn");
-const close = document.querySelector(".close");
- 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+  <!-- 모달창 자바스크립트 -->
+  <script>
+    const modal = document.querySelector("#modal");
+    const btn = document.querySelector("#modal-btn");
+    const close = document.querySelector(".close");
 
-close.onclick = function() {
-  modal.style.display = "none";
-}
-    </script>
-    <!--모달창 끝-->
+    // 모달 열기
+    btn.onclick = function(event) {
+      event.preventDefault(); // 기본 동작 방지 (form 제출 방지)
+      event.stopPropagation(); // 이벤트 버블링 방지
+      modal.style.display = "block"; // 모달 표시
+    }
+
+    // 모달 닫기
+    close.onclick = function(event) {
+      event.stopPropagation(); // 이벤트 버블링 방지
+      modal.style.display = "none"; // 모달 숨김
+    }
+
+    // 모달 외부 클릭 방지
+    modal.onclick = function(event) {
+      event.stopPropagation(); // 모달 외부 클릭 방지
+    }
+
+    // 만약 모달 내부에서 클릭 시에도 닫히지 않도록 설정
+    document.querySelector(".inner").onclick = function(event) {
+      event.stopPropagation(); // 이벤트 버블링 방지
+    }
+  </script>
+  <!-- 모달창 끝 -->
 </form>
